@@ -1,244 +1,253 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Saúde e Prevenção - ISTs</title>
-  <style>
-    body {
-      font-family: "Segoe UI", sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f9f9;
-      color: #333;
-    }
-    header {
-      background-color: #008080;
-      color: white;
-      padding: 15px 0;
-      text-align: center;
-      position: relative;
-    }
-    header img {
-      width: 80px;
-      position: absolute;
-      left: 20px;
-      top: 10px;
-    }
-    nav {
-      margin-top: 10px;
-    }
-    nav button {
-      background-color: white;
-      color: #008080;
-      border: none;
-      margin: 5px;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    nav button:hover {
-      background-color: #006666;
-      color: white;
-    }
-    section {
-      display: none;
-      padding: 30px 20px;
-      animation: fadeIn 0.6s;
-      max-width: 900px;
-      margin: auto;
-    }
-    section.active {
-      display: block;
-    }
-    h2 {
-      color: #006666;
-      border-bottom: 2px solid #00b3b3;
-      padding-bottom: 5px;
-    }
-    iframe {
-      width: 100%;
-      height: 400px;
-      border: none;
-      border-radius: 10px;
-      margin-top: 15px;
-    }
-    footer {
-      background-color: #008080;
-      color: white;
-      text-align: center;
-      padding: 15px 5px;
-      margin-top: 40px;
-      font-size: 0.9rem;
-    }
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-    .question {
-      margin-bottom: 20px;
-    }
-    .question label {
-      display: block;
-      margin-top: 5px;
-    }
-    .btn-test {
-      background-color: #00b3b3;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .btn-test:hover {
-      background-color: #006666;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISTs - Projeto de Extensão</title>
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9fcff;
+    color: #333;
+  }
+
+  header {
+    background-color: #0076b6;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  header img {
+    height: 60px;
+    vertical-align: middle;
+  }
+
+  nav {
+    background-color: #eaf6ff;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 12px 0;
+  }
+
+  nav a {
+    color: #0076b6;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+
+  nav a:hover {
+    color: #00a896;
+  }
+
+  section {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+  }
+
+  h1, h2 {
+    color: #0076b6;
+    text-align: center;
+  }
+
+  .video {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 10px;
+  }
+
+  .quiz {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  .quiz h3 {
+    color: #0076b6;
+  }
+
+  button {
+    background-color: #0076b6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #005f8a;
+  }
+
+  footer {
+    background-color: #0076b6;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  .hidden {
+    display: none;
+  }
+</style>
 </head>
 <body>
 
-  <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/UNINASSAU_logo.png" alt="Logo UNINASSAU">
-    <h1>Saúde e Prevenção - ISTs</h1>
-    <nav>
-      <button onclick="showSection('inicio')">Início</button>
-      <button onclick="showSection('oque')">O que são</button>
-      <button onclick="showSection('prevencao')">Prevenção</button>
-      <button onclick="showSection('teste')">Teste seus conhecimentos</button>
-      <button onclick="showSection('quem')">Quem Somos</button>
-    </nav>
-  </header>
+<header>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Uninassau_logo.png" alt="Logo UNINASSAU">
+  <h1>Projeto de Extensão - ISTs</h1>
+</header>
 
-  <main>
-    <section id="inicio" class="active">
-      <h2>Bem-vindo!</h2>
-      <p>As Infecções Sexualmente Transmissíveis (ISTs) são causadas por vírus, bactérias ou outros microrganismos e são transmitidas principalmente pelo contato sexual sem proteção. Conhecimento e prevenção são as melhores formas de proteção.</p>
-      <iframe src="https://www.youtube.com/embed/G_-TtdoSmZY" allowfullscreen></iframe>
-    </section>
+<nav>
+  <a href="#inicio">Início</a>
+  <a href="#oque-sao">O que são</a>
+  <a href="#prevencao">Prevenção</a>
+  <a href="#teste">Teste seus conhecimentos</a>
+  <a href="#quem-somos">Quem Somos</a>
+</nav>
 
-    <section id="oque">
-      <h2>O que são ISTs?</h2>
-      <p>As ISTs são doenças transmitidas por meio do contato sexual desprotegido, seja vaginal, anal ou oral. Também podem ser transmitidas de mãe para filho durante a gravidez, parto ou amamentação.</p>
-      <ul>
-        <li><strong>Clamídia e Gonorreia:</strong> causam corrimento e dor ao urinar.</li>
-        <li><strong>Hepatites virais:</strong> afetam o fígado.</li>
-        <li><strong>HIV/Aids:</strong> compromete o sistema imunológico.</li>
-        <li><strong>HPV:</strong> causa verrugas e pode levar ao câncer de colo do útero.</li>
-        <li><strong>Sífilis:</strong> tem várias fases e pode causar sérios danos à saúde.</li>
-      </ul>
-    </section>
+<section id="inicio">
+  <h2>Bem-vindo ao nosso Projeto!</h2>
+  <p>As Infecções Sexualmente Transmissíveis (ISTs) são um tema importante de saúde pública. Nosso objetivo é conscientizar, informar e prevenir, por meio de conhecimento acessível e ações educativas.</p>
+  <div class="video">
+    <iframe src="https://www.youtube.com/embed/G_-TtdoSmZY" allowfullscreen></iframe>
+  </div>
+</section>
 
-    <section id="prevencao">
-      <h2>Prevenção</h2>
-      <p>As principais formas de prevenção são:</p>
-      <ul>
-        <li>Uso de preservativos em todas as relações sexuais.</li>
-        <li>Vacinação contra HPV e Hepatite B.</li>
-        <li>Realização periódica de testes rápidos.</li>
-        <li>Evitar compartilhamento de objetos cortantes.</li>
-        <li>Manter diálogo aberto com o parceiro(a).</li>
-      </ul>
-    </section>
+<section id="oque-sao">
+  <h2>O que são as ISTs?</h2>
+  <p>As ISTs são doenças causadas por vírus, bactérias ou outros microrganismos transmitidos principalmente por meio de relações sexuais desprotegidas. Elas podem afetar homens e mulheres e, muitas vezes, não apresentam sintomas imediatos.</p>
+  <p>Entre as principais ISTs estão: HIV/Aids, sífilis, gonorreia, HPV, clamídia e herpes genital. A prevenção e o diagnóstico precoce são essenciais para o tratamento e o controle.</p>
+</section>
 
-    <section id="teste">
-      <h2>Teste seus conhecimentos</h2>
-      <form id="quizForm">
-        <div class="question">
-          <p>1. O que significa a sigla IST?</p>
-          <label><input type="radio" name="q1" value="certa"> Infecção Sexualmente Transmissível</label>
-          <label><input type="radio" name="q1" value="errada"> Infecção Sintomática Tropical</label>
-        </div>
+<section id="prevencao">
+  <h2>Prevenção</h2>
+  <p>As principais formas de prevenção incluem:</p>
+  <ul>
+    <li>Uso regular de preservativos masculinos e femininos.</li>
+    <li>Vacinação contra HPV e Hepatite B.</li>
+    <li>Realização de testes periódicos.</li>
+    <li>Evitar o compartilhamento de seringas e objetos cortantes.</li>
+    <li>Diálogo aberto sobre saúde sexual com parceiros e profissionais da saúde.</li>
+  </ul>
+</section>
 
-        <div class="question">
-          <p>2. Qual é a forma mais eficaz de prevenção das ISTs?</p>
-          <label><input type="radio" name="q2" value="certa"> Uso de preservativo</label>
-          <label><input type="radio" name="q2" value="errada"> Evitar beijar</label>
-        </div>
+<section id="teste">
+  <h2>Teste seus conhecimentos</h2>
+  <div class="quiz" id="quiz">
+    <form id="quizForm">
+      <div>
+        <h3>1. O que significa IST?</h3>
+        <input type="radio" name="q1" value="certo"> Infecção Sexualmente Transmissível<br>
+        <input type="radio" name="q1" value="errado"> Infecção Simples Temporária<br>
+        <input type="radio" name="q1" value="errado"> Ingestão de Substâncias Tóxicas
+      </div><br>
+      <div>
+        <h3>2. Qual é a forma mais eficaz de prevenção?</h3>
+        <input type="radio" name="q2" value="certo"> Uso de preservativo<br>
+        <input type="radio" name="q2" value="errado"> Evitar beijar<br>
+        <input type="radio" name="q2" value="errado"> Usar álcool em gel
+      </div><br>
+      <div>
+        <h3>3. A sífilis é causada por:</h3>
+        <input type="radio" name="q3" value="certo"> Uma bactéria<br>
+        <input type="radio" name="q3" value="errado"> Um vírus<br>
+        <input type="radio" name="q3" value="errado"> Um fungo
+      </div><br>
+      <div>
+        <h3>4. O HIV causa qual doença?</h3>
+        <input type="radio" name="q4" value="certo"> Aids<br>
+        <input type="radio" name="q4" value="errado"> Herpes<br>
+        <input type="radio" name="q4" value="errado"> Clamídia
+      </div><br>
+      <div>
+        <h3>5. O HPV pode causar:</h3>
+        <input type="radio" name="q5" value="certo"> Câncer de colo do útero<br>
+        <input type="radio" name="q5" value="errado"> Diabetes<br>
+        <input type="radio" name="q5" value="errado"> Hepatite
+      </div><br>
+      <div>
+        <h3>6. Qual dessas ISTs é curável?</h3>
+        <input type="radio" name="q6" value="certo"> Sífilis<br>
+        <input type="radio" name="q6" value="errado"> HIV<br>
+        <input type="radio" name="q6" value="errado"> HPV
+      </div><br>
+      <div>
+        <h3>7. O diagnóstico precoce é importante porque:</h3>
+        <input type="radio" name="q7" value="certo"> Facilita o tratamento e evita complicações<br>
+        <input type="radio" name="q7" value="errado"> Diminui o preço dos remédios<br>
+        <input type="radio" name="q7" value="errado"> Impede o uso de preservativos
+      </div><br>
+      <div>
+        <h3>8. A transmissão de ISTs pode ocorrer:</h3>
+        <input type="radio" name="q8" value="certo"> Em relações sexuais sem proteção<br>
+        <input type="radio" name="q8" value="errado"> Ao compartilhar roupas<br>
+        <input type="radio" name="q8" value="errado"> Pelo ar
+      </div><br>
+      <div>
+        <h3>9. Qual profissional pode orientar sobre ISTs?</h3>
+        <input type="radio" name="q9" value="certo"> Profissional de saúde<br>
+        <input type="radio" name="q9" value="errado"> Qualquer amigo<br>
+        <input type="radio" name="q9" value="errado"> Policial
+      </div><br>
+      <div>
+        <h3>10. As ISTs afetam:</h3>
+        <input type="radio" name="q10" value="certo"> Homens e mulheres igualmente<br>
+        <input type="radio" name="q10" value="errado"> Apenas homens<br>
+        <input type="radio" name="q10" value="errado"> Apenas mulheres
+      </div><br>
 
-        <div class="question">
-          <p>3. O HIV causa qual doença?</p>
-          <label><input type="radio" name="q3" value="certa"> Aids</label>
-          <label><input type="radio" name="q3" value="errada"> Hepatite</label>
-        </div>
+      <button type="button" onclick="verificar()">Ver resultado</button>
+    </form>
 
-        <div class="question">
-          <p>4. O HPV pode causar câncer?</p>
-          <label><input type="radio" name="q4" value="certa"> Sim</label>
-          <label><input type="radio" name="q4" value="errada"> Não</label>
-        </div>
+    <div id="resultado" class="hidden">
+      <h3>Resultado:</h3>
+      <p id="pontuacao"></p>
+      <p id="gabarito"></p>
+    </div>
+  </div>
+</section>
 
-        <div class="question">
-          <p>5. Sífilis é uma IST curável?</p>
-          <label><input type="radio" name="q5" value="certa"> Sim</label>
-          <label><input type="radio" name="q5" value="errada"> Não</label>
-        </div>
+<section id="quem-somos">
+  <h2>Quem Somos</h2>
+  <p>Somos alunos da UNINASSAU Petrolina, desenvolvendo este projeto de extensão com o objetivo de promover a conscientização sobre as ISTs e contribuir para a prevenção e promoção da saúde sexual na comunidade.</p>
+  <div style="text-align:center; margin-top:20px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Uninassau_logo.png" alt="UNINASSAU Petrolina" style="height:100px;">
+  </div>
+</section>
 
-        <div class="question">
-          <p>6. A transmissão de ISTs pode ocorrer apenas por sexo vaginal?</p>
-          <label><input type="radio" name="q6" value="errada"> Sim</label>
-          <label><input type="radio" name="q6" value="certa"> Não</label>
-        </div>
+<footer>
+  <p>© 2025 Projeto ISTs - Todos os direitos reservados</p>
+  <p>UNINASSAU Petrolina — Turma NG, Grupo 05 - Projeto de Extensão</p>
+</footer>
 
-        <div class="question">
-          <p>7. É possível ter uma IST sem apresentar sintomas?</p>
-          <label><input type="radio" name="q7" value="certa"> Sim</label>
-          <label><input type="radio" name="q7" value="errada"> Não</label>
-        </div>
+<script>
+function verificar() {
+  const form = document.getElementById('quizForm');
+  const respostas = form.querySelectorAll('input[type="radio"]:checked');
+  let pontos = 0;
+  respostas.forEach(r => { if (r.value === "certo") pontos++; });
+  
+  const resultado = document.getElementById('resultado');
+  resultado.classList.remove('hidden');
+  document.getElementById('pontuacao').innerText = `Você acertou ${pontos} de 10 perguntas.`;
+  document.getElementById('gabarito').innerText = 'Gabarito: 1-C, 2-C, 3-C, 4-C, 5-C, 6-C, 7-C, 8-C, 9-C, 10-C (todas as alternativas corretas são as primeiras).';
+}
+</script>
 
-        <div class="question">
-          <p>8. O teste rápido pode identificar algumas ISTs?</p>
-          <label><input type="radio" name="q8" value="certa"> Sim</label>
-          <label><input type="radio" name="q8" value="errada"> Não</label>
-        </div>
-
-        <div class="question">
-          <p>9. Apenas pessoas com múltiplos parceiros podem contrair ISTs?</p>
-          <label><input type="radio" name="q9" value="errada"> Sim</label>
-          <label><input type="radio" name="q9" value="certa"> Não</label>
-        </div>
-
-        <div class="question">
-          <p>10. A vacinação ajuda na prevenção de algumas ISTs?</p>
-          <label><input type="radio" name="q10" value="certa"> Sim</label>
-          <label><input type="radio" name="q10" value="errada"> Não</label>
-        </div>
-
-        <button type="button" class="btn-test" onclick="checkQuiz()">Enviar respostas</button>
-      </form>
-
-      <p id="resultado"></p>
-    </section>
-
-    <section id="quem">
-      <h2>Quem Somos</h2>
-      <p>Este projeto é uma iniciativa acadêmica dedicada à conscientização sobre Infecções Sexualmente Transmissíveis (ISTs), desenvolvida com o objetivo de promover a prevenção e o conhecimento sobre saúde sexual e reprodutiva.</p>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/UNINASSAU_logo.png" alt="Logo Uninassau Petrolina" style="width:200px; margin-top:20px;">
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Saúde e Prevenção - Todos os direitos reservados.</p>
-    <p>Uninassau Petrolina<br>Turma NG, Grupo 05 - Projeto de Extensão</p>
-  </footer>
-
-  <script>
-    function showSection(id) {
-      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
-      document.getElementById(id).classList.add("active");
-    }
-
-    function checkQuiz() {
-      const total = 10;
-      let acertos = 0;
-      document.querySelectorAll("#quizForm input[type='radio']:checked").forEach(el => {
-        if (el.value === "certa") acertos++;
-      });
-      document.getElementById("resultado").innerText = 
-        `Você acertou ${acertos} de ${total} perguntas!`;
-    }
-  </script>
 </body>
 </html>
